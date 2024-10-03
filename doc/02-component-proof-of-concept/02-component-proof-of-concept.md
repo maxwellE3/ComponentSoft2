@@ -1,12 +1,10 @@
 # Portfolio Part 2: Component Proof-of-Concept
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Max Emerine
+- **Dot Number**: emeirne.39
+- **Due Date**: October 3rd, 2024 at 12:40 p.m.
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 Previously, you brainstormed three ideas, and hopefully you got some feedback as
 well. However, it's impossible to know how reasonable your design actually is
@@ -30,8 +28,6 @@ the more work you can put in now, the better.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -53,8 +49,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -67,8 +61,6 @@ project. Specifically, students should be able to:
 3. Assemble a minimal working implementation of one of their designs
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -105,10 +97,9 @@ do good work.
 > the other. Alternatively, if you hate all of your old designs, use this space
 > to create a new design. In you do end up picking one at random, you should
 > disclose that here as well.
-
-<!-- TODO: briefly argue your choice of design or design something
-new; then delete this comment -->
-
+> I choose to move foawrd with my chord design. This is because I think that it is an actual tool that I would use in my musical
+> life. Also, I think that the implementation of this could be set on many different data structures like a map, stack or queue.
+> This could allow me to have different implementations of chord like chord1L or chord2.
 > Once you've argued your choice of design, make a branch in your new repo called
 > something like `proof-of-concept`. There are many ways to do this, but my
 > preference is to use GitHub Desktop. From there, you can click the `Branch`
@@ -117,8 +108,6 @@ new; then delete this comment -->
 > VSCode to run git commands. It's entirely up to you. Regardless of your choice,
 > we'll want a branch that you can later make a pull request from with all
 > your changes.
-
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
@@ -164,7 +153,7 @@ the following form: YYYY.0M.0D.
 
 ### Added
 
-- Designed a proof of concept for <!-- insert name of component here --> component
+- Designed a proof of concept for Chord component
 
 ### Updated
 
@@ -172,15 +161,13 @@ the following form: YYYY.0M.0D.
 
 ```
 
-Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.
+Here `2024.10.3` would be the date of your submission, such as 2024.04.21.
 
 You may notice that things are nicely linked in the root CHANGELOG. If you'd
 like to accomplish that, you will need to make GitHub releases after each pull
 request merge (or at least tag your commits). This is not required.
 
 ### Submission
-
-<!-- TODO: read the submission instructions then delete this comment -->
 
 Assuming that your project is in a GitHub repo somewhere and your changes are on
 a proof-of-concept branch, then what we'll want you to do is create a pull
@@ -237,5 +224,4 @@ better for future students.
 <!-- TODO: follow the link to share your feedback then delete this comment -->
 
 [pottery-fails]: https://www.youtube.com/shorts/Kqb9l113F_0?feature=share
-[markdown-to-pdf-guide]: https://therenegadecoder.com/blog/how-to-convert-markdown-to-a-pdf-3-quick-solutions/
 [survey]: https://forms.gle/dumXHo6A4Enucdkq9
