@@ -1,4 +1,5 @@
 /**
+ *
  * {@code ChordKernel} enhanced with secondary methods.
  */
 public interface Chord extends ChordKernel {
