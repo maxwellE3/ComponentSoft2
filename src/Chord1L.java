@@ -8,7 +8,7 @@ import components.simplewriter.SimpleWriter1L;
  *
  * @author
  */
-public class Chord {
+public class Chord1L {
 
     /**
      * Removes the last note in a chord.
