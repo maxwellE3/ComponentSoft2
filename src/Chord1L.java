@@ -1,115 +1,82 @@
 import components.queue.Queue;
 import components.queue.Queue1L;
-import components.simplewriter.SimpleWriter;
-import components.simplewriter.SimpleWriter1L;
 
 /**
  * Allows a user to transverse through a chord.
  *
  * @author
  */
-public class Chord1L {
+public class Chord1L extends ChordSecondary {
 
     /**
-     * Removes the last note in a chord.
-     *
-     * @param q
-     *
-     * @return removed
+     * Representation of {@code this}.
      */
-    public static char removeLast(Queue<Character> q) {
-        q.flip();
-        char removed = q.dequeue();
-        q.flip();
+    private Queue<Character> rep;
+
+    /**
+     * Creator of initial representation.
+     */
+    private void createNewRep() {
+        this.rep = new Queue1L<>();
+    }
+
+    /**
+     * No-Argument Constructor.
+     */
+    public Chord1L() {
+        this.createNewRep();
+    }
+
+    /**
+     * Standard Methods.
+     */
+    @Override
+    public final Chord newInstance() {
+        try {
+            return this.getClass().getConstructor().newInstance();
+        } catch (ReflectiveOperationException e) {
+            throw new AssertionError(
+                    "Cannot construct object of type " + this.getClass());
+        }
+    }
+
+    @Override
+    public final void clear() {
+        this.createNewRep();
+    }
+
+    @Override
+    public final void transferFrom(Chord source) {
+        assert source != null : "Violation of: source is not null";
+        assert source != this : "Violation of: source is not this";
+        assert source instanceof Chord1L : ""
+                + "Violation of: source is of dynamic type NaturalNumberExample";
+
+        Chord1L localSource = (Chord1L) source;
+        this.rep = localSource.rep;
+        localSource.createNewRep();
+    }
+
+    /**
+     * Kernel Methods.
+     */
+
+    @Override
+    public final char removeLast() {
+        assert this.rep.length() != 0 : "Violation of: this is not empty";
+
+        this.rep.flip();
+        char removed = this.rep.dequeue();
+        this.rep.flip();
 
         return removed;
     }
 
-    /**
-     * Gets the root node of the given chord.
-     *
-     * @param q
-     *
-     * @return root
-     */
-    public static char getRoot(Queue<Character> q) {
-        char root = q.front();
-        return root;
-    }
+    @Override
+    public final void addNote(char note) {
+        assert note != '\u0000' : "Violation of: note is not null";
 
-    /**
-     * Add the user given note to the chord.
-     *
-     * @param q
-     * @param note
-     */
-    public static void addNote(Queue<Character> q, char note) {
-        q.enqueue(note);
-    }
+        this.rep.enqueue(note);
 
-    /**
-     * Gets the triad of the given chord.
-     *
-     * @param q
-     *
-     * @return triad
-     */
-    public static String getTriad(Queue<Character> q) {
-        String triad = "";
-        for (char y : q) {
-            String currChar = y + "";
-            if (!(triad.contains(currChar))) {
-                triad += y;
-            }
-        }
-        return triad;
-    }
-
-    /**
-     * Main Method.
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        SimpleWriter out = new SimpleWriter1L();
-        Queue<Character> aMaj = new Queue1L<>();
-
-        //Build an A major guitar chord based off the bar chord.
-        aMaj.enqueue('a');
-        aMaj.enqueue('C');
-        aMaj.enqueue('e');
-        aMaj.enqueue('C');
-        aMaj.enqueue('e');
-        aMaj.enqueue('a');
-
-        //removes the last note in the chord, a, leaving you still with an A major.
-        char removed = removeLast(aMaj);
-
-        //prints out the new chord
-        for (char y : aMaj) {
-            out.print(y);
-        }
-        out.println();
-        //prints out the removed note form the chord
-        out.println("Removed: " + removed);
-
-        //gets the root of the chord to show the user what chord is being used.
-        char root = getRoot(aMaj);
-        out.println("Root: " + root);
-
-        //adds the note, a, to the chord
-        char addedNote = 'a';
-        addNote(aMaj, addedNote);
-
-        //prints out the new chord
-        for (char y : aMaj) {
-            out.print(y);
-        }
-        out.println();
-
-        String triad = getTriad(aMaj);
-        out.println(triad);
-
-        out.close();
     }
 }

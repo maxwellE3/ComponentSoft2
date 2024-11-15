@@ -23,6 +23,7 @@ the following form: YYYY.0M.0D.
   project
 - Added information about how to make a pull request to every part of the
   project
+- Designed Kernel Implementation for Chord component
 
 ### Changed
 
@@ -44,6 +45,7 @@ the following form: YYYY.0M.0D.
 - Updated README to include step about using template repo
 - Updated part 3 rubric to include a hierarchy diagram
 - Updated part 6 rubric to account for overall polish
+- Fixed pier reviews, updated some secondary methods
 
 ### Fixed
 
@@ -53,6 +55,7 @@ the following form: YYYY.0M.0D.
 
 - Removed `java.saveActions.organizeImports` setting from `settings.json`
 - Removed references to `Point3D` completely
+- Removed some white space
 
 ## [2024.01.07]
 
