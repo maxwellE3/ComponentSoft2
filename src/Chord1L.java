@@ -10,6 +10,13 @@ public class Chord1L extends ChordSecondary {
 
     /**
      * Representation of {@code this}.
+     *
+     * I chose to represent my component, Chord, using a queue because it is
+     * easy to input and remove a certain type of variable. Also, I have been
+     * wokring with queues for a while now, so I am very familiar with how they
+     * function. Queues have the format of first in first out allowing me to
+     * keep order within the inputted chord. Another representation that could
+     * be useful is stack, however I chose queue due to familiarity.
      */
     private Queue<Character> rep;
 
