@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 
 import components.queue.Queue;
@@ -100,36 +99,42 @@ public abstract class ChordSecondary implements Chord {
     }
 
     @Override
-    public boolean isEqual(String c) {
-        Queue<Character> tempQueue = new Queue1L<>();
-        Queue<Character> queueC = new Queue1L<>();
+    public boolean equals(Object c) {
         boolean equal = true;
-
-        for (char x : c.toCharArray()) {
-            queueC.enqueue(x);
-        }
-
-        char currChar = this.removeLast();
-        while (currChar != '\0') {
-            tempQueue.enqueue(currChar);
-            currChar = this.removeLast();
-        }
-        tempQueue.flip();
-
-        if (tempQueue.length() != queueC.length()) {
+        if (!(c instanceof String)) {
             equal = false;
         } else {
-            while (queueC.length() != 0 && equal) {
-                char temp1 = tempQueue.dequeue();
-                char temp2 = queueC.dequeue();
-                this.addNote(temp1);
-                if (temp1 != temp2) {
-                    equal = false;
+            String str = (String) c;
+
+            Queue<Character> tempQueue = new Queue1L<>();
+            Queue<Character> queueC = new Queue1L<>();
+
+            for (char x : str.toCharArray()) {
+                queueC.enqueue(x);
+            }
+
+            char currChar = this.removeLast();
+            while (currChar != '\0') {
+                tempQueue.enqueue(currChar);
+                currChar = this.removeLast();
+            }
+            tempQueue.flip();
+
+            if (tempQueue.length() != queueC.length()) {
+                equal = false;
+            } else {
+                while (queueC.length() != 0 && equal) {
+                    char temp1 = tempQueue.dequeue();
+                    char temp2 = queueC.dequeue();
+                    this.addNote(temp1);
+                    if (temp1 != temp2) {
+                        equal = false;
+                    }
                 }
             }
-        }
-        while (tempQueue.length() != 0) {
-            this.addNote(tempQueue.dequeue());
+            while (tempQueue.length() != 0) {
+                this.addNote(tempQueue.dequeue());
+            }
         }
         return equal;
     }
