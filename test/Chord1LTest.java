@@ -1,7 +1,7 @@
 /**
  * Customized JUnit test fixture for {@code Chord1L}.
  */
-public class Chord1LTest extends ChordTest {
+public class Chord1LTest extends ChordTestAbstract {
 
     @Override
     protected final Chord constructorTest() {

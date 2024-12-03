@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 import components.queue.Queue;
 import components.queue.Queue1L;
 
@@ -51,14 +49,22 @@ public abstract class ChordSecondary implements Chord {
         char[] triad = new char[this.THREE];
         int i = 2;
         char currChar = this.removeLast();
+        tempQueue.enqueue(currChar);
         triad[i] = currChar;
-        while (currChar != '\0') {
-            if (!(Arrays.asList(triad).contains(currChar))) {
+        i--;
+        while (i > -1) {
+            currChar = this.removeLast();
+            tempQueue.enqueue(currChar);
+            boolean contained = false;
+            for (int j = 0; j < triad.length && !contained; j++) {
+                if (triad[j] == currChar) {
+                    contained = true;
+                }
+            }
+            if (!(contained)) {
                 triad[i] = currChar;
                 i--;
             }
-            tempQueue.enqueue(currChar);
-            currChar = this.removeLast();
         }
 
         // Restore notes from the queue to the chord in original order
@@ -68,15 +74,15 @@ public abstract class ChordSecondary implements Chord {
 
         // Arrange the triad based on the specified inversion
         switch (inversion) {
-            case 0: // Root position
+            case 1: // Root position
                 return "" + triad[0] + triad[1] + triad[2];
-            case 1: // First inversion
+            case 2: // First inversion
                 return "" + triad[1] + triad[2] + triad[0];
-            case 2: // Second inversion
+            case 3: // Second inversion
                 return "" + triad[2] + triad[0] + triad[1];
             default:
                 throw new IllegalArgumentException(
-                        "Invalid inversion. Must be 0, 1, or 2.");
+                        "Invalid inversion. Must be 1, 2, or 3.");
         }
     }
 
@@ -85,13 +91,13 @@ public abstract class ChordSecondary implements Chord {
         Queue<Character> tempQueue = new Queue1L<>();
 
         String chord = "";
-        char currChar = this.removeLast();
-        while (currChar != '\0') {
+        while (this.length() != 0) {
+            char currChar = this.removeLast();
             tempQueue.enqueue(currChar);
         }
         tempQueue.flip();
         while (tempQueue.length() != 0) {
-            currChar = tempQueue.dequeue();
+            char currChar = tempQueue.dequeue();
             chord += currChar;
             this.addNote(currChar);
         }
@@ -114,7 +120,7 @@ public abstract class ChordSecondary implements Chord {
             }
 
             char currChar = this.removeLast();
-            while (currChar != '\0') {
+            while (!(this.isEmpty())) {
                 tempQueue.enqueue(currChar);
                 currChar = this.removeLast();
             }
