@@ -46,6 +46,7 @@ the following form: YYYY.0M.0D.
 - Updated part 3 rubric to include a hierarchy diagram
 - Updated part 6 rubric to account for overall polish
 - Fixed pier reviews, updated some secondary methods
+- Finalized my project and added a JUnit test file
 
 ### Fixed
 

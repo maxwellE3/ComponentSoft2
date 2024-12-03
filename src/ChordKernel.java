@@ -27,4 +27,18 @@ public interface ChordKernel extends Standard<Chord> {
      * @ensures |this| = |#this| + 1
      */
     void addNote(char note);
+
+    /**
+     * Returns if {@code this} is empty.
+     *
+     * @return boolean
+     */
+    boolean isEmpty();
+
+    /**
+     * Returns the length of the chord.
+     *
+     * @return length of the chord
+     */
+    int length();
 }

@@ -84,6 +84,24 @@ public class Chord1L extends ChordSecondary {
         assert note != '\u0000' : "Violation of: note is not null";
 
         this.rep.enqueue(note);
+    }
 
+    @Override
+    public final boolean isEmpty() {
+        boolean empty = (this.rep.length() == 0);
+        return empty;
+    }
+
+    @Override
+    public final int length() {
+        Queue<Character> tempQueue = this.rep.newInstance();
+        int len = 0;
+        while (this.rep.length() != 0) {
+            char note = this.rep.dequeue();
+            len++;
+            tempQueue.enqueue(note);
+        }
+        this.rep.transferFrom(tempQueue);
+        return len;
     }
 }
