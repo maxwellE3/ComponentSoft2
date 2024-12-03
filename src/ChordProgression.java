@@ -19,14 +19,14 @@ public class ChordProgression {
     private Queue<Chord> currPro;
 
     /**
-     * IDK.
+     * Creates a chord progression represented as a queue.
      */
     public void chordProgression() {
         this.currPro = new Queue1L<>();
     }
 
     /**
-     * Creates the users curr chord.
+     * Creates the users current chord.
      *
      * @param in
      * @param out
@@ -52,7 +52,7 @@ public class ChordProgression {
     }
 
     /**
-     * IDK.
+     * Adds the {@code c} to the current chord progression.
      *
      * @param c
      */

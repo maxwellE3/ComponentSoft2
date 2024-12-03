@@ -3,7 +3,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
- * Hello.
+ * Tests the kernel methods.
  */
 public abstract class ChordTestKernel {
 

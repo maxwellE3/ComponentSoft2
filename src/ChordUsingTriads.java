@@ -4,7 +4,8 @@ import components.simplewriter.SimpleWriter;
 import components.simplewriter.SimpleWriter1L;
 
 /**
- * IDK.
+ * Shows how my components is useful when trying to navigate a chord built by
+ * the user.
  */
 public class ChordUsingTriads {
 
